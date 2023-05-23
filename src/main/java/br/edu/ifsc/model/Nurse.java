@@ -1,20 +1,11 @@
 package br.edu.ifsc.model;
 
-public class Nurse {
-    private String name;
+public class Nurse extends HealthcareProfessional{
     private int experienceYears;
 
     private Nurse(NurseBuilder builder) {
-        this.name = builder.name;
+        this.setName(builder.name);
         this.experienceYears = builder.experienceYears;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getExperienceYears() {
@@ -46,6 +37,6 @@ public class Nurse {
 
     @Override
     public String toString() {
-        return "Nurse: " + name + ", Experience Years: " + experienceYears;
+        return "Nurse: " + getName() + ", Experience Years: " + experienceYears;
     }
 }

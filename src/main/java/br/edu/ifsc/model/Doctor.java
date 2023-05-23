@@ -1,20 +1,11 @@
 package br.edu.ifsc.model;
 
-public class Doctor {
-    private String name;
+public class Doctor extends HealthcareProfessional{
     private String specialization;
 
     private Doctor(DoctorBuilder builder) {
-        this.name = builder.name;
+        this.setName(builder.name);
         this.specialization = builder.specialization;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getSpecialization() {
@@ -46,6 +37,6 @@ public class Doctor {
 
     @Override
     public String toString() {
-        return "Doctor: " + name + ", Specialization: " + specialization;
+        return "Doctor: " + getName() + ", Specialization: " + specialization;
     }
 }
